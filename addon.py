@@ -22,7 +22,6 @@ except:
   path = '/'
 
 try:
-  addDir("..", "/")
   if path == '/':
      for key,label in { "CEH":"Certified Ethical Hacker",
                         "PYTHON": "Python",
