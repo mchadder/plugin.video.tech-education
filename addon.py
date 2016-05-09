@@ -33,7 +33,7 @@ try:
                         "NODEJS":"Node.js",
                         "SSO": "SSO",
                         "LINUX":"Linux",
-                        "GIT":"Git",
+                        "GIT":"Git Tutorials",
                         "DOCKER":"Docker"
                       }.items():
        addDir(label, key)
@@ -51,7 +51,11 @@ try:
     add_video("OAuth2 - A tale of two servers", "tFYrq3d54Dc")
     add_video("OAuth2 in 8 steps", "io_r-0e3Qcw")
   elif path == "GIT":
-     add_video("Branching and Merging", "RDGzF2M-zlo")
+     add_video("Git Tutorials - 1. Setting up and doing a commit", "j1oFazXrzN4")
+     add_video("Git Tutorials - 2. Adding a remote repository", "KDt01U859Ik")
+     add_video("Git Tutorials - 3. Branching and merging", "uR-9NGrpU-c")
+     add_video("Git Tutorials - 4. More Branching", "Luo-xKWD6aw")
+     add_video("Git Tutorials - 5. The .gitignore file", "aj8ifYrzGas")
      add_video("How to use Git - add, commit, push, pull, status", "DQUcmNO4diQ")
   elif path == "CRYPTO":
      add_video("Symmetric and Asymmetric Cryptography - Overview", "8sufUTAdXCs")
