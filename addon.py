@@ -29,7 +29,7 @@ try:
                         "NGINX":"Nginx",
                         "JAVASCRIPT":"Javascript",
                         "MONGODB":"MongoDB",
-                        "CRYPTO":"Cryptography",
+                        "CRYPTO":"Cryptography and Hashing",
                         "NODEJS":"Node.js",
                         "SSO": "SSO",
                         "LINUX":"Linux",
@@ -62,6 +62,7 @@ try:
      add_video("Overview of PKI concepts", "QCvHWA7qQNI")
      add_video("Diffie-Hellman Key Exchange", "YEBfamv-_do")
      add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
+     add_video("Passwords, Hashes and Salt (ITS335, Lecture 8, 2013)", "M7SWzGi0a50")
      add_video("Dan Boneh - 2.1 - One-Time Pads", "aMvSvR_NZJE")
      add_video("Dan Boneh - 2.2 - Stream ciphers and PRGs", "NjedHm04ETM")
      add_video("Dan Boneh - 3.1 - Block Ciphers", "vE0h8NCpuQs")
