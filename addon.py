@@ -64,6 +64,7 @@ try:
      add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
      add_video("Passwords, Hashes and Salts (ITS335, Lecture 8, 2013)", "M7SWzGi0a50")
      add_video("Salts, Passwords and Rainbow Table Attacks (ITS335, L9, Y14)", "GT_qgImaUS4")
+     add_video("Cryptographic Hash Functions (CSS441, L17, Y15)", "qL8HSt7NWT0")
      add_video("Dan Boneh - 2.1 - One-Time Pads", "aMvSvR_NZJE")
      add_video("Dan Boneh - 2.2 - Stream ciphers and PRGs", "NjedHm04ETM")
      add_video("Dan Boneh - 3.1 - Block Ciphers", "vE0h8NCpuQs")
