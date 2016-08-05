@@ -31,25 +31,25 @@ try:
                         "MONGODB":"MongoDB",
                         "CRYPTO":"Cryptography and Hashing",
                         "NODEJS":"Node.js",
-                        "SSO": "SSO",
+                        "SSO": "SSO - SAML/OAUTH2 etc.",
                         "LINUX":"Linux",
-                        "GIT":"Git Tutorials",
+                        "GIT":"Git",
                         "DOCKER":"Docker"
                       }.items():
        addDir(label, key)
   elif path == "NGINX":
-    add_video("Load Balancing with Nginx", "SpL_hJNUNEI")
-    add_video("Load Balancing and static caching", "FJrs0Ar9asY")
-    add_video("Making HTTPS faster with nginx", "iHxD-G0YjiU")
-    add_video("Set up HTTPS on nginx", "D2P5cRMi0fQ")
-    add_video("5 things you didn't know that NGINX could do", "7Y7ORypoHhE")
+     add_video("Load Balancing with Nginx", "SpL_hJNUNEI")
+     add_video("Load Balancing and static caching", "FJrs0Ar9asY")
+     add_video("Making HTTPS faster with nginx", "iHxD-G0YjiU")
+     add_video("Set up HTTPS on nginx", "D2P5cRMi0fQ")
+     add_video("5 things you didn't know that NGINX could do", "7Y7ORypoHhE")
   elif path == "DOCKER":
-    add_video("Basics of Docker Run command", "yrE2vJDcFVM")
-    add_video("Building Docker images using Dockerfile", "6nJu1oDxYvc")
+     add_video("Basics of Docker Run command", "yrE2vJDcFVM")
+     add_video("Building Docker images using Dockerfile", "6nJu1oDxYvc")
   elif path == "SSO":
-    add_video("Breaking SAML", "RHIkb9yEV1k")
-    add_video("OAuth2 - A tale of two servers", "tFYrq3d54Dc")
-    add_video("OAuth2 in 8 steps", "io_r-0e3Qcw")
+     add_video("Breaking SAML", "RHIkb9yEV1k")
+     add_video("OAuth2 - A tale of two servers", "tFYrq3d54Dc")
+     add_video("OAuth2 in 8 steps", "io_r-0e3Qcw")
   elif path == "GIT":
      add_video("Git Tutorials - 1. Setting up and doing a commit", "j1oFazXrzN4")
      add_video("Git Tutorials - 2. Adding a remote repository", "KDt01U859Ik")
@@ -57,14 +57,13 @@ try:
      add_video("Git Tutorials - 4. More Branching", "Luo-xKWD6aw")
      add_video("Git Tutorials - 5. The .gitignore file", "aj8ifYrzGas")
      add_video("How to use Git - add, commit, push, pull, status", "DQUcmNO4diQ")
-  elif path == "CRYPTO":
-     add_video("Symmetric and Asymmetric Cryptography - Overview", "8sufUTAdXCs")
-     add_video("Overview of PKI concepts", "QCvHWA7qQNI")
-     add_video("Diffie-Hellman Key Exchange", "YEBfamv-_do")
-     add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
-     add_video("Passwords, Hashes and Salts (ITS335, Lecture 8, 2013)", "M7SWzGi0a50")
-     add_video("Salts, Passwords and Rainbow Table Attacks (ITS335, L9, Y14)", "GT_qgImaUS4")
-     add_video("Cryptographic Hash Functions (CSS441, L17, Y15)", "qL8HSt7NWT0")
+  elif path == "CRYPTO_GORDON":
+     add_video("Steven Gordon - ITS335 - Passwords, Hashes and Salts", "M7SWzGi0a50")
+     add_video("Steven Gordon - ITS335 - Salts, Passwords and Rainbow Table Attack", "GT_qgImaUS4")
+     add_video("Steven Gordon - CSS441 - Public Key Crypto with RSA", "t4E-dYLBfsM")
+     add_video("Steven Gordon - CSS441 - Cryptographic Hash Functions", "qL8HSt7NWT0")
+     add_video("Steven Gordon - CSS322 - Hash Functions and Digital Signatures", "CElDACNB-6Y")
+  elif path == "CRYPTO_BONEH":
      add_video("Dan Boneh - 2.1 - One-Time Pads", "aMvSvR_NZJE")
      add_video("Dan Boneh - 2.2 - Stream ciphers and PRGs", "NjedHm04ETM")
      add_video("Dan Boneh - 3.1 - Block Ciphers", "vE0h8NCpuQs")
@@ -87,7 +86,14 @@ try:
      add_video("Dan Boneh - 9.1 - Trusted 3rd Parties", "cmrqdC3c6Tg")
      add_video("Dan Boneh - 9.2 - Merkle Puzzles", "wRBkzEX-4Qo")
      add_video("Dan Boneh - 9.3 - Diffie-Hellman Protocol", "3gfrL5-G3qc")
-     add_video("Dan Boneh - 9.4 - Public Key Encryption", "Jd4cew9k_Ow")
+     add_video("Dan Boneh - 9.4 - Public Key Encryption", "Jd4cew9k_Ow")      
+  elif path == "CRYPTO":
+     add_video("Symmetric and Asymmetric Cryptography - Overview", "8sufUTAdXCs")
+     add_video("Overview of PKI concepts", "QCvHWA7qQNI")
+     add_video("Diffie-Hellman Key Exchange", "YEBfamv-_do")
+     add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
+     addDir("Steven Gordon - Lectures", "CRYPTO_GORDON")
+     addDir("Dan Boneh - Lectures", "CRYPTO_BONEH")
   elif path == "CEH":
      add_video("Buffer Overflow Attacks", "iZTilLGAcFQ")
      add_video("How Kerberos Works", "kp5d8Yv3-0c")
