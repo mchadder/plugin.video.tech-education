@@ -60,6 +60,7 @@ try:
   elif path == "CRYPTO_GORDON":
      add_video("Steven Gordon - ITS335 - Passwords, Hashes and Salts", "M7SWzGi0a50")
      add_video("Steven Gordon - ITS335 - Salts, Passwords and Rainbow Table Attack", "GT_qgImaUS4")
+     add_video("Steven Gordon - CSS441 - Overview and Applications of Public Key Crypto", "gWMYfdkRL3w")
      add_video("Steven Gordon - CSS441 - Public Key Crypto with RSA", "t4E-dYLBfsM")
      add_video("Steven Gordon - CSS441 - Cryptographic Hash Functions", "qL8HSt7NWT0")
      add_video("Steven Gordon - CSS322 - Hash Functions and Digital Signatures", "CElDACNB-6Y")
