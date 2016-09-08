@@ -32,6 +32,7 @@ try:
                         "CRYPTO":"Cryptography and Hashing",
                         "NODEJS":"Node.js",
                         "SSO": "SSO - SAML/OAUTH2 etc.",
+                        "ORACLE": "Oracle",
                         "LINUX":"Linux",
                         "GIT":"Git",
                         "DOCKER":"Docker"
@@ -46,6 +47,8 @@ try:
   elif path == "DOCKER":
      add_video("Basics of Docker Run command", "yrE2vJDcFVM")
      add_video("Building Docker images using Dockerfile", "6nJu1oDxYvc")
+  elif path == "ORACLE":
+     add_video("ORDS 3.0 - OAUTH 2.0 Security", "BAC_UqlNzvg")
   elif path == "SSO":
      add_video("Breaking SAML", "RHIkb9yEV1k")
      add_video("OAuth2 - A tale of two servers", "tFYrq3d54Dc")
@@ -127,6 +130,8 @@ try:
      add_video("Sockets - Binding and Listening", "Q1a12QFq3os")
      add_video("Sockets - Client/Server System", "WrtebUkUssc")
      add_video("The Observer Pattern in Python", "87MNuBgeg34")
+     add_video("Python 3 - Multithreading", "6eqC1WTlIqc")
+     add_video("Embracing the GIL - David Beazley", "fwzPF2JLoeU")
   elif path == "JAVASCRIPT":
      add_video("Introduction to JavaScript and Browser DOM", "ljNi8nS5TtQ")
      add_video("Javascript Closures", "R_ZvxMyFSCU")
