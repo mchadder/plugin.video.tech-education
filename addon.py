@@ -113,6 +113,8 @@ try:
      add_video("DNS Records", "alumRsTngjI")
      add_video("Understanding Switches and Hubs", "9yYqNqTNnqI")
      add_video("Understanding SOHO Routers", "w44J7CN26Ig")
+     add_video("CompTIA+ - Intro to SANs", "4RsLUTJ_Qtk")
+     add_video("NAS and SAN Introduction", "csdJFazj3h0")
      add_video("VPNs", "q4P4BjjXghQ")
      add_video("Wireless Bridges for Networking", "7nTgQQbF9zo")
      add_video("Black Ops of TCP/IP - Dan Kaminsky - DEFCON 19", "U3o7DhL9gI4")
