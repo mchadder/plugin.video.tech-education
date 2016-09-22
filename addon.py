@@ -61,12 +61,14 @@ try:
      add_video("Git Tutorials - 5. The .gitignore file", "aj8ifYrzGas")
      add_video("How to use Git - add, commit, push, pull, status", "DQUcmNO4diQ")
   elif path == "CRYPTO_GORDON":
-     add_video("Steven Gordon - ITS335 - Passwords, Hashes and Salts", "M7SWzGi0a50")
-     add_video("Steven Gordon - ITS335 - Salts, Passwords and Rainbow Table Attack", "GT_qgImaUS4")
-     add_video("Steven Gordon - CSS441 - Overview and Applications of Public Key Crypto", "gWMYfdkRL3w")
-     add_video("Steven Gordon - CSS441 - Public Key Crypto with RSA", "t4E-dYLBfsM")
-     add_video("Steven Gordon - CSS441 - Cryptographic Hash Functions", "qL8HSt7NWT0")
-     add_video("Steven Gordon - CSS322 - Hash Functions and Digital Signatures", "CElDACNB-6Y")
+     add_video("ITS335 - Passwords, Hashes and Salts", "M7SWzGi0a50")
+     add_video("ITS335 - Salts, Passwords and Rainbow Table Attack", "GT_qgImaUS4")
+     add_video("CSS441 - Overview and Applications of Public Key Crypto", "gWMYfdkRL3w")
+     add_video("CSS441 - Public Key Crypto with RSA", "t4E-dYLBfsM")
+     add_video("CSS441 - Cryptographic Hash Functions", "qL8HSt7NWT0")
+     add_video("CSS322 - Hash Functions and Digital Signatures", "CElDACNB-6Y")
+     add_video("CSS322 - Collision Resistance and Birthday Paradox", "_JBkw60KPqw")
+     add_video("CSS322 - Introduction to Block and Stream Ciphers and DES", "Lh4r8QkFiF0")
   elif path == "CRYPTO_BONEH":
      add_video("Dan Boneh - 2.1 - One-Time Pads", "aMvSvR_NZJE")
      add_video("Dan Boneh - 2.2 - Stream ciphers and PRGs", "NjedHm04ETM")
@@ -96,6 +98,7 @@ try:
      add_video("Overview of PKI concepts", "QCvHWA7qQNI")
      add_video("Diffie-Hellman Key Exchange", "YEBfamv-_do")
      add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
+     add_video("Hash Functions And You - PyCon 2015", "IGwNQfjLTp0")
      addDir("Steven Gordon - Lectures", "CRYPTO_GORDON")
      addDir("Dan Boneh - Lectures", "CRYPTO_BONEH")
   elif path == "CEH":
