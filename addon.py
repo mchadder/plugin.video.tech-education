@@ -31,7 +31,6 @@ try:
                         "MONGODB":"MongoDB",
                         "CRYPTO":"Cryptography and Hashing",
                         "NODEJS":"Node.js",
-                        "SSO": "SSO - SAML/OAUTH2 etc.",
                         "ORACLE": "Oracle",
                         "LINUX":"Linux",
                         "GIT":"Git",
@@ -49,10 +48,6 @@ try:
      add_video("Building Docker images using Dockerfile", "6nJu1oDxYvc")
   elif path == "ORACLE":
      add_video("ORDS 3.0 - OAUTH 2.0 Security", "BAC_UqlNzvg")
-  elif path == "SSO":
-     add_video("Breaking SAML", "RHIkb9yEV1k")
-     add_video("OAuth2 - A tale of two servers", "tFYrq3d54Dc")
-     add_video("OAuth2 in 8 steps", "io_r-0e3Qcw")
   elif path == "GIT":
      add_video("Git Tutorials - 1. Setting up and doing a commit", "j1oFazXrzN4")
      add_video("Git Tutorials - 2. Adding a remote repository", "KDt01U859Ik")
@@ -99,6 +94,7 @@ try:
      add_video("Diffie-Hellman Key Exchange", "YEBfamv-_do")
      add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
      add_video("Hash Functions And You - PyCon 2015", "IGwNQfjLTp0")
+     add_video("SQRL - Steve Gibson - Digicert Summit 2014", "CviwNXAH1lk")
      addDir("Steven Gordon - Lectures", "CRYPTO_GORDON")
      addDir("Dan Boneh - Lectures", "CRYPTO_BONEH")
   elif path == "CEH":
