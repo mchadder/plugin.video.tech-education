@@ -61,6 +61,7 @@ try:
      add_video("CSS441 - Overview and Applications of Public Key Crypto", "gWMYfdkRL3w")
      add_video("CSS441 - Public Key Crypto with RSA", "t4E-dYLBfsM")
      add_video("CSS441 - Cryptographic Hash Functions", "qL8HSt7NWT0")
+     add_video("CSS441 - Message Authentication Codes (MACs)", "VTRwZcEtzEo")
      add_video("CSS322 - Hash Functions and Digital Signatures", "CElDACNB-6Y")
      add_video("CSS322 - Collision Resistance and Birthday Paradox", "_JBkw60KPqw")
      add_video("CSS322 - Introduction to Block and Stream Ciphers and DES", "Lh4r8QkFiF0")
