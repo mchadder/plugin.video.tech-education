@@ -43,6 +43,8 @@ try:
      add_video("Making HTTPS faster with nginx", "iHxD-G0YjiU")
      add_video("Set up HTTPS on nginx", "D2P5cRMi0fQ")
      add_video("5 things you didn't know that NGINX could do", "7Y7ORypoHhE")
+     add_video("A security shield for your applications", "nVrwJEWjtSY")
+     add_video("NGINX + HTTPS 101 - The basics","dsTub1_4Upg")
   elif path == "DOCKER":
      add_video("Basics of Docker Run command", "yrE2vJDcFVM")
      add_video("Building Docker images using Dockerfile", "6nJu1oDxYvc")
@@ -134,6 +136,7 @@ try:
      add_video("The Observer Pattern in Python", "87MNuBgeg34")
      add_video("Python 3 - Multithreading", "6eqC1WTlIqc")
      add_video("Embracing the GIL - David Beazley", "fwzPF2JLoeU")
+     add_video("Is your REST API RESTful?","pZYRC8IbCwk")
   elif path == "JAVASCRIPT":
      add_video("Introduction to JavaScript and Browser DOM", "ljNi8nS5TtQ")
      add_video("Javascript Closures", "R_ZvxMyFSCU")
