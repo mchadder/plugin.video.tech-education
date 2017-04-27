@@ -117,6 +117,7 @@ try:
      add_video("OWASP - XSS", "1eQd7GCOpp4")
      add_video("CSRF Explained", "vrjgD0azkCw")
      add_video("SSL and the future of authenticity - Moxie Marlinspike", "Z7Wl2FW2TcA")
+     add_video("Predicting and Abusing WPA2/802.11 Group Keys", "KJWd-_BDC_g&t=93s")
   elif path == "NETWORKING":
      add_video("Network Layers - OSI, TCP/IP Models - Part 1", "SII38b0RJr8")
      add_video("Network Layers - OSI, TCP/IP Models - Part 2", "W74H0FVXY_w")
