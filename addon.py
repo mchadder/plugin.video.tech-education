@@ -5,7 +5,7 @@ def addLink(name, url):
   li.setProperty("IsPlayable", "true")
   li.setInfo(type="Video", infoLabels={"Title":name})
   xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=url,listitem=li, isFolder=False)
-    
+
 def addDir(name,path):
   u=sys.argv[0]+"?path=%s"%(path)
   li=xbmcgui.ListItem(name, iconImage="DefaultFolder.png")
@@ -26,6 +26,7 @@ try:
      for key,label in { "CEH":"Certified Ethical Hacker",
                         "PYTHON": "Python",
                         "NETWORKING":"Networking",
+                        "APPSEC": "AppSec / Authentication",
                         "NGINX":"Nginx",
                         "JAVASCRIPT":"Javascript",
                         "MONGODB":"MongoDB",
@@ -37,6 +38,8 @@ try:
                         "DOCKER":"Docker"
                       }.items():
        addDir(label, key)
+  elif path == "APPSEC":
+     add_video("FIDO Universal 2nd Factor (U2F)", "bc8kHq4N-EM")
   elif path == "NGINX":
      add_video("Load Balancing with Nginx", "SpL_hJNUNEI")
      add_video("Load Balancing and static caching", "FJrs0Ar9asY")
@@ -92,7 +95,7 @@ try:
      add_video("Dan Boneh - 9.1 - Trusted 3rd Parties", "cmrqdC3c6Tg")
      add_video("Dan Boneh - 9.2 - Merkle Puzzles", "wRBkzEX-4Qo")
      add_video("Dan Boneh - 9.3 - Diffie-Hellman Protocol", "3gfrL5-G3qc")
-     add_video("Dan Boneh - 9.4 - Public Key Encryption", "Jd4cew9k_Ow")      
+     add_video("Dan Boneh - 9.4 - Public Key Encryption", "Jd4cew9k_Ow")
   elif path == "CRYPTO_HASH":
      add_video("Hash Functions And You - PyCon 2015", "IGwNQfjLTp0")
      add_video("Keyed-Hash MAC (HMAC)", "BjInMA-b8ZE")
@@ -102,7 +105,7 @@ try:
   elif path == "CRYPTO":
      addDir("Hash Functions", "CRYPTO_HASH")
      addDir("Steven Gordon - Lectures", "CRYPTO_GORDON")
-     addDir("Dan Boneh - Lectures", "CRYPTO_BONEH")     
+     addDir("Dan Boneh - Lectures", "CRYPTO_BONEH")
      add_video("CompTIA+ Digital Signatures", "7gZefMlLpV4")
      add_video("How BitCoin works in 5 minutes", "l9jOJk30eQs")
      add_video("Symmetric and Asymmetric Cryptography - Overview", "8sufUTAdXCs")
@@ -118,6 +121,7 @@ try:
      add_video("CSRF Explained", "vrjgD0azkCw")
      add_video("SSL and the future of authenticity - Moxie Marlinspike", "Z7Wl2FW2TcA")
      add_video("Predicting and Abusing WPA2/802.11 Group Keys", "KJWd-_BDC_g&t=93s")
+     add_video("Key Reinstallation Attacks: Breaking the WPA2 Protocol","fZ1R9RliM1w")
   elif path == "NETWORKING":
      add_video("Network Layers - OSI, TCP/IP Models - Part 1", "SII38b0RJr8")
      add_video("Network Layers - OSI, TCP/IP Models - Part 2", "W74H0FVXY_w")
@@ -160,7 +164,7 @@ try:
      add_video("Teasers : Keeping track of \"this\"", "JduQUNn7L4w")
      add_video("Teasers : What is an Object?", "8iXoWC9XcU8")
   elif path == "NODEJS":
-     add_video("Introduction to Node.js with Ryan Dahl", "jo_B4LTHi3I")  
+     add_video("Introduction to Node.js with Ryan Dahl", "jo_B4LTHi3I")
      add_video("Node.js - Javascript on the server (Google Techtalk)", "F6k8lTrAE2g")
   elif path == "MONGODB":
      add_video("MongoDB - Not just about Big Data", "b1BZ9YFsd2o")
