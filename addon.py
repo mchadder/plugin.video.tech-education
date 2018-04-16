@@ -11,18 +11,54 @@ def addDir(name,path):
   li=xbmcgui.ListItem(name, iconImage="DefaultFolder.png")
   xbmcplugin.addDirectoryItem(handle=int(sys.argv[1]),url=u,listitem=li,isFolder=True)
 
-def add_video(title, id):
-  url = "plugin://plugin.video.youtube?path=/root/video&action=play_video&videoid=%s"%(id)
+def play_video(path):
+    """
+    Play a video by the provided path.
+    :param path: str
+    :return: None
+    """
+    # Create a playable item with a path to play.
+    play_item = xbmcgui.ListItem(path=path)
+    # Pass the item to the Kodi player.
+    xbmcplugin.setResolvedUrl(__handle__, True, listitem=play_item)
+
+def add_video(title, id="", tp="YOUTUBE", path=""):
+  if (tp=="YOUTUBE"):
+    url = "plugin://plugin.video.youtube?path=/root/video&action=play_video&videoid=%s"%(id)
+  else:
+    url = "plugin://plugin.video.tech-education/?action=play&path=%s"%(path)
   addLink(title,  url)
 
-try:
-  params = urlparse.parse_qs(urlparse.urlparse(sys.argv[2]).query)
-  path = params['path'][0]
-except:
-  path = '/'
+# Simple page scraper using urllib2 and re
+def pageLinks(url, ext=".webm"):
+  import urllib2, re
+
+  html = urllib2.urlopen(url).read()
+  links = re.findall(r'href=[\'"]?([^\'" >]+)', html)
+
+  for i in links:
+    if ext in i:
+      addLink(i, "%s%s"%(url,i))
+
+params = urlparse.parse_qs(urlparse.urlparse(sys.argv[2]).query)
 
 try:
-  if path == '/':
+  path = params["path"][0]
+except:
+  path = "/"
+
+try:
+  action = params["action"][0]
+except:
+  action = "/"
+
+try:
+  if action == "play":
+    play_item = xbmcgui.ListItem(path=path)
+    # Pass the item to the Kodi player.
+    xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, listitem=play_item)
+  else:
+    if path == '/':
      for key,label in { "CEH":"Certified Ethical Hacker",
                         "PYTHON": "Python",
                         "NETWORKING":"Networking",
@@ -35,12 +71,15 @@ try:
                         "ORACLE": "Oracle",
                         "LINUX":"Linux",
                         "GIT":"Git",
-                        "DOCKER":"Docker"
+                        "DOCKER":"Docker",
+                        "CURLUP_2018":"CurlUp 2018 Conference"
                       }.items():
        addDir(label, key)
-  elif path == "APPSEC":
+    elif path == "CURLUP_2018":
+     pageLinks(url="https://curl.haxx.se/video/curlup-2018/")
+    elif path == "APPSEC":
      add_video("FIDO Universal 2nd Factor (U2F)", "bc8kHq4N-EM")
-  elif path == "NGINX":
+    elif path == "NGINX":
      add_video("Load Balancing with Nginx", "SpL_hJNUNEI")
      add_video("Load Balancing and static caching", "FJrs0Ar9asY")
      add_video("Making HTTPS faster with nginx", "iHxD-G0YjiU")
@@ -48,19 +87,19 @@ try:
      add_video("5 things you didn't know that NGINX could do", "7Y7ORypoHhE")
      add_video("A security shield for your applications", "nVrwJEWjtSY")
      add_video("NGINX + HTTPS 101 - The basics","dsTub1_4Upg")
-  elif path == "DOCKER":
+    elif path == "DOCKER":
      add_video("Basics of Docker Run command", "yrE2vJDcFVM")
      add_video("Building Docker images using Dockerfile", "6nJu1oDxYvc")
-  elif path == "ORACLE":
+    elif path == "ORACLE":
      add_video("ORDS 3.0 - OAUTH 2.0 Security", "BAC_UqlNzvg")
-  elif path == "GIT":
+    elif path == "GIT":
      add_video("Git Tutorials - 1. Setting up and doing a commit", "j1oFazXrzN4")
      add_video("Git Tutorials - 2. Adding a remote repository", "KDt01U859Ik")
      add_video("Git Tutorials - 3. Branching and merging", "uR-9NGrpU-c")
      add_video("Git Tutorials - 4. More Branching", "Luo-xKWD6aw")
      add_video("Git Tutorials - 5. The .gitignore file", "aj8ifYrzGas")
      add_video("How to use Git - add, commit, push, pull, status", "DQUcmNO4diQ")
-  elif path == "CRYPTO_GORDON":
+    elif path == "CRYPTO_GORDON":
      add_video("ITS335 - Passwords, Hashes and Salts", "M7SWzGi0a50")
      add_video("ITS335 - Salts, Passwords and Rainbow Table Attack", "GT_qgImaUS4")
      add_video("CSS441 - Overview and Applications of Public Key Crypto", "gWMYfdkRL3w")
@@ -70,7 +109,7 @@ try:
      add_video("CSS322 - Hash Functions and Digital Signatures", "CElDACNB-6Y")
      add_video("CSS322 - Collision Resistance and Birthday Paradox", "_JBkw60KPqw")
      add_video("CSS322 - Introduction to Block and Stream Ciphers and DES", "Lh4r8QkFiF0")
-  elif path == "CRYPTO_BONEH":
+    elif path == "CRYPTO_BONEH":
      add_video("Dan Boneh - 2.1 - One-Time Pads", "aMvSvR_NZJE")
      add_video("Dan Boneh - 2.2 - Stream ciphers and PRGs", "NjedHm04ETM")
      add_video("Dan Boneh - 3.1 - Block Ciphers", "vE0h8NCpuQs")
@@ -96,13 +135,13 @@ try:
      add_video("Dan Boneh - 9.2 - Merkle Puzzles", "wRBkzEX-4Qo")
      add_video("Dan Boneh - 9.3 - Diffie-Hellman Protocol", "3gfrL5-G3qc")
      add_video("Dan Boneh - 9.4 - Public Key Encryption", "Jd4cew9k_Ow")
-  elif path == "CRYPTO_HASH":
+    elif path == "CRYPTO_HASH":
      add_video("Hash Functions And You - PyCon 2015", "IGwNQfjLTp0")
      add_video("Keyed-Hash MAC (HMAC)", "BjInMA-b8ZE")
      add_video("BLAKE / SHA-3 Proposal Visualisation", "bc-lu8uyivk")
      add_video("PBKDF2", "OXT8xqWww6U")
      add_video("SCrypt", "TkWAgeSYL_Q")
-  elif path == "CRYPTO":
+    elif path == "CRYPTO":
      addDir("Hash Functions", "CRYPTO_HASH")
      addDir("Steven Gordon - Lectures", "CRYPTO_GORDON")
      addDir("Dan Boneh - Lectures", "CRYPTO_BONEH")
@@ -114,7 +153,7 @@ try:
      add_video("Elliptic Curve Diffie-Hellman", "F3zzNa42-tQ")
      add_video("How SSL works (with HTTPS example)", "iQsKdtjwtYI")
      add_video("SQRL - Steve Gibson - Digicert Summit 2014", "CviwNXAH1lk")
-  elif path == "CEH":
+    elif path == "CEH":
      add_video("Buffer Overflow Attacks", "iZTilLGAcFQ")
      add_video("How Kerberos Works", "kp5d8Yv3-0c")
      add_video("OWASP - XSS", "1eQd7GCOpp4")
@@ -122,7 +161,7 @@ try:
      add_video("SSL and the future of authenticity - Moxie Marlinspike", "Z7Wl2FW2TcA")
      add_video("Predicting and Abusing WPA2/802.11 Group Keys", "KJWd-_BDC_g&t=93s")
      add_video("Key Reinstallation Attacks: Breaking the WPA2 Protocol","fZ1R9RliM1w")
-  elif path == "NETWORKING":
+    elif path == "NETWORKING":
      add_video("Network Layers - OSI, TCP/IP Models - Part 1", "SII38b0RJr8")
      add_video("Network Layers - OSI, TCP/IP Models - Part 2", "W74H0FVXY_w")
      add_video("Network Layers - OSI, TCP/IP Models - Part 3", "BplNYiUV5kU")
@@ -136,7 +175,7 @@ try:
      add_video("VPNs", "q4P4BjjXghQ")
      add_video("Wireless Bridges for Networking", "7nTgQQbF9zo")
      add_video("Black Ops of TCP/IP - Dan Kaminsky - DEFCON 19", "U3o7DhL9gI4")
-  elif path == "PYTHON":
+    elif path == "PYTHON":
      add_video("Google Python Course 1.1 - Introduction and Strings", "tKTZoB2Vjuk")
      add_video("Google Python Course 1.2 - Lists, Sorting and Tuples", "EPYupizJYQI")
      add_video("Google Python Course 1.3 - Dicts and Files", "haycL41dAhg")
@@ -153,7 +192,7 @@ try:
      add_video("Python 3 - Multithreading", "6eqC1WTlIqc")
      add_video("Embracing the GIL - David Beazley", "fwzPF2JLoeU")
      add_video("Is your REST API RESTful?","pZYRC8IbCwk")
-  elif path == "JAVASCRIPT":
+    elif path == "JAVASCRIPT":
      add_video("Introduction to JavaScript and Browser DOM", "ljNi8nS5TtQ")
      add_video("Javascript Closures", "R_ZvxMyFSCU")
      add_video("Javascript: Getting Closure (IIFEs/Closures)", "KRm-h6vcpxs")
@@ -163,15 +202,15 @@ try:
      add_video("Teasers : The basics of scope", "ZoFlcv2ByBo")
      add_video("Teasers : Keeping track of \"this\"", "JduQUNn7L4w")
      add_video("Teasers : What is an Object?", "8iXoWC9XcU8")
-  elif path == "NODEJS":
+    elif path == "NODEJS":
      add_video("Introduction to Node.js with Ryan Dahl", "jo_B4LTHi3I")
      add_video("Node.js - Javascript on the server (Google Techtalk)", "F6k8lTrAE2g")
-  elif path == "MONGODB":
+    elif path == "MONGODB":
      add_video("MongoDB - Not just about Big Data", "b1BZ9YFsd2o")
      add_video("Introduction to MongoDB", "xOLwqUbpxGQ")
      add_video("Building Applications with MongoDB", "UNYSTA4tMVY")
      add_video("MongoDB Schema Design", "PIWVFUtBV1Q")
-  elif path == "LINUX":
+    elif path == "LINUX":
      add_video("Introduction to Docker", "Q5POuMHxW-0")
      add_video("Configuring GRUB", "osEemMXKjFM")
      add_video("How to CHROOT on Linux", "N87m6fxO5a8")
